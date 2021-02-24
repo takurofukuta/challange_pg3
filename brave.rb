@@ -1,4 +1,4 @@
-class Braver < Character
+class Brave < Character
   def initialize(name:, hp:, offense:, defense:)
     super
   end

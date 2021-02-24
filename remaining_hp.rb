@@ -1,15 +1,15 @@
 class RemainingHp
-  def initialize(braver, monster)
+  def initialize(brave, monster)
     puts <<~TEXT
     *=*=*=*=*=*=*=*=*=*=*
-    【#{braver.name}】HP: #{braver.hp}
+    【#{brave.name}】HP: #{brave.hp}
     【#{monster.name}】HP: #{monster.hp}
     *=*=*=*=*=*=*=*=*=*=*
     TEXT
     if monster.hp == 0
       puts "#{monster.name} をやっつけた！"
-    elsif braver.hp == 0
-      puts "#{braver.name} はしんでしまった！"
+    elsif brave.hp == 0
+      puts "#{brave.name} はしんでしまった！"
     end
   end
 end
