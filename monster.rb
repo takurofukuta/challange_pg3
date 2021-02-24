@@ -4,13 +4,12 @@ class Monster < Character
     puts "#{@name} が現れた！"
   end
 
-  def attack(braver)
-    return if @hp == 0
-    damage = @offense - braver.defense / 2
+  def attack(brave)
+    damage = @offense - brave.defense / 2
     puts "#{@name} の攻撃!"
-    puts "#{braver.name} は #{damage} のダメージを受けた！"
-    braver.hp -= damage
-    braver.hp = 0 if braver.hp < 0
+    puts "#{brave.name} は #{damage} のダメージを受けた！"
+    brave.hp -= damage
+    brave.hp = 0 if brave.hp < 0
 
   end
 end

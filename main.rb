@@ -1,15 +1,15 @@
 require "./character"
 require "./monster"
-require "./braver"
-require "./remaining_hp"
+require "./brave"
+require "./display"
 
 # monster = Monster.new(name: 'アークデーモン', hp: 210, offense: 140, defense: 80)
-monster = Monster.new(name: "シドー", hp: 250, offense: 255, defense: 255)
-braver = Braver.new(name: "ゆうしゃ", hp: 238, offense: 203, defense: 129)
 
-while true
-  braver.attack(monster)
-  monster.attack(braver)
-  RemainingHp.new(braver,monster)
-  break if monster.hp == 0 || braver.hp == 0
+monster = Monster.new(name: "シドー", hp: 250, offense: 255, defense: 255)
+brave = Brave.new(name: "ゆうしゃ", hp: 238, offense: 203, defense: 129)
+
+while monster.hp > 0 && brave.hp > 0
+  brave.attack(monster) if brave.hp > 0
+  monster.attack(brave) if monster.hp > 0
+  Display.remaining_hp(brave,monster)
 end

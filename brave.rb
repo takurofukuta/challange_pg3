@@ -1,7 +1,4 @@
-class Braver < Character
-  def initialize(name:, hp:, offense:, defense:)
-    super
-  end
+class Brave < Character
   
   def attack(monster)
     damage = @offense - monster.defense / 2
