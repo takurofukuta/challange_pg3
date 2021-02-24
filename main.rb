@@ -8,8 +8,8 @@ monster = Monster.new(name: 'アークデーモン', hp: 210, offense: 140, defe
 brave = Brave.new(name: "ゆうしゃ", hp: 238, offense: 203, defense: 129)
 
 while true
-  brave.attack(monster)
-  monster.attack(brave)
+  brave.attack(monster) if monster.hp > 0
+  monster.attack(brave) if brave.hp > 0
   RemainingHp.new(brave,monster)
   break if monster.hp == 0 || brave.hp == 0
 end

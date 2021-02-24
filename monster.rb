@@ -5,7 +5,6 @@ class Monster < Character
   end
 
   def attack(brave)
-    return if @hp == 0
     damage = @offense - brave.defense / 2
     puts "#{@name} の攻撃!"
     puts "#{brave.name} は #{damage} のダメージを受けた！"
