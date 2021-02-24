@@ -1,7 +1,7 @@
 require "./character"
 require "./monster"
 require "./brave"
-require "./remaining_hp"
+require "./display"
 
 # monster = Monster.new(name: 'アークデーモン', hp: 210, offense: 140, defense: 80)
 
@@ -11,5 +11,5 @@ brave = Brave.new(name: "ゆうしゃ", hp: 238, offense: 203, defense: 129)
 while monster.hp > 0 && brave.hp > 0
   brave.attack(monster) if brave.hp > 0
   monster.attack(brave) if monster.hp > 0
-  RemainingHp.new(brave,monster)
+  Display.remaining_hp(brave,monster)
 end
